@@ -18,7 +18,7 @@ export default function Home() {
 </style>
       </Head>
       <main className={styles.main}>
-        <a  href="/"><h1>BushCub's Adventure's</h1></a>
+        <a href="/"><h1>BushCub's Adventure's</h1></a>
         <Nav/>
       </main>
       <Footer/>

@@ -6,13 +6,10 @@ function Nav() {
         <nav>
             <ul>
                 <Link
-                    href={"/"}
-                >Videos</Link>
-                <Link
-                    href={"/"}
+                    href={"/Recipes"}
                 >Recipe's</Link>
                 <Link
-                    href={"/"}
+                    href={"/Contact"}
                 >Say G'day</Link>
             </ul>
                 
