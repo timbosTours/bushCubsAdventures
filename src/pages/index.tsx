@@ -3,8 +3,13 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.scss'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import { Amatic_SC } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const amatic = Amatic_SC({
+  weight: ['700', '400'],
+  subsets: ['latin']
+})
+
 
 // possoble Fonts; Amatic
 
@@ -18,7 +23,7 @@ export default function Home() {
 </style>
       </Head>
       <main className={styles.main}>
-        <a href="/"><h1>BushCub's Adventure's</h1></a>
+        <a href="/"><h1 className={amatic.className}>BushCub's Adventure's</h1></a>
         <Nav/>
       </main>
       <Footer/>
