@@ -4,6 +4,7 @@ import styles from '@/styles/Home.module.scss'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import { Amatic_SC } from 'next/font/google'
+import Videos from '@/components/Videos'
 
 const amatic = Amatic_SC({
   weight: ['700', '400'],
@@ -24,7 +25,8 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <a href="/"><h1 className={amatic.className}>BushCub's Adventure's</h1></a>
-        <Nav/>
+        <Nav />
+        <Videos/>
       </main>
       <Footer/>
     </>
