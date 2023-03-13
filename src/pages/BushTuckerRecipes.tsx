@@ -2,7 +2,7 @@ import React from 'react'
 
 function Recipes() {
   return (
-    <div>Recipes</div>
+    <div>Bush Tucker Recipe's</div>
   )
 }
 

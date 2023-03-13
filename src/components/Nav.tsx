@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import { Amatic_SC } from 'next/font/google'
 
+
 const amatic = Amatic_SC({
     weight: ['700', '400'],
     subsets: ['latin']
@@ -10,11 +11,11 @@ const amatic = Amatic_SC({
 function Nav() {
     return (
         <nav>
-                    <a href="/"><h1 className={amatic.className}>BushCub's Adventure's</h1></a>
+                <a href="/"><h1 className={amatic.className}>BushCub's Adventure's</h1></a>
             <ul>
                 <Link
-                    href={"/Recipes"}
-                >Recipe's</Link>
+                    href={"/BushTuckerRecipes"}
+                >Bush Tucker Recipe's</Link>
                 <Link
                     href={"/Contact"}
                 >Say G'day</Link>
