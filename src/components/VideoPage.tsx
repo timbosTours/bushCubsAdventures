@@ -1,6 +1,8 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Nav from './Nav';
+import Footer from './Footer';
 
 interface Video {
     id: string;
@@ -33,7 +35,8 @@ function VideoPage() {
     }
 
     return (
-    <div>
+        <div>
+            <Nav/>
         <h1>{video.title}</h1>
         <iframe
         width="560"
@@ -42,7 +45,8 @@ function VideoPage() {
         title={video.title}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
-        ></iframe>
+            ></iframe>
+            <Footer/>
     </div>
     );
 }
