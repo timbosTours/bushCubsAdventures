@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Link from 'next/link'
 
 interface Video {
   id: string;
@@ -7,13 +8,15 @@ interface Video {
   thumbnail: string;
 }
 
-function Videos() {
+function VideosList() {
   const API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
   const CHANNEL_ID = process.env.NEXT_PUBLIC_YOUTUBE_CHANNEL_ID;
 
   const [videos, setVideos] = useState<Video[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false)
 
   const fetchVideos = async () => {
+    setIsLoading(true)
     const res = await axios.get(
       `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=30`
     );
@@ -23,7 +26,8 @@ function Videos() {
       title: video.snippet.title,
       thumbnail: video.snippet.thumbnails.default.url,
     }));
-    setVideos(videoList);
+    setVideos(videoList)
+    setIsLoading(false)
   };
 
   useEffect(() => {
@@ -32,16 +36,21 @@ function Videos() {
 
   return (
     <div>
-      {videos.map((video) => {
+      {isLoading ? (
+      <h2>LOADING...</h2>
+      ) :
+      (videos.map((video) => {
         return (
           <div key={video.id}>
-            <p>{video.title}</p>
+            <Link href={`/${video.id}`}>
             <img src={video.thumbnail} alt={video.title} />
+              <p>{video.title}</p>
+            </Link>
           </div>
         );
-      })}
+      }))}
     </div>
   );
 }
 
-export default Videos;
+export default VideosList;
